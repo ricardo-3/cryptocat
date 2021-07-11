@@ -1,0 +1,362 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #faf9fa;
+}
+
+.header {
+  background-color: #fff;
+  box-shadow: -1px 3px 17px -5px rgba(0, 0, 0, 0.79);
+  -webkit-box-shadow: -1px 3px 17px -5px rgba(0, 0, 0, 0.79);
+  -moz-box-shadow: -1px 3px 17px -5px rgba(0, 0, 0, 0.79);
+  width: 100%;
+  height: 70px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+}
+.header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 95%;
+}
+.header .container .btn {
+  font-size: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.header .container .btn i {
+  cursor: pointer;
+  margin-right: 30px;
+}
+.header .container .btn .logo {
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: 30px;
+  font-weight: bold;
+  letter-spacing: 3PX;
+}
+@media (max-width: 600px) {
+  .header .container .btn .logo {
+    font-size: 18px;
+  }
+}
+.header .container .login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 120px;
+  height: 30px;
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 18px;
+  cursor: pointer;
+}
+@media (max-width: 600px) {
+  .header .container .login {
+    width: 100px;
+  }
+}
+.header .container .login li {
+  list-style: none;
+}
+.header .container .login li a {
+  text-decoration: none;
+  font-family: "Roboto Condensed", sans-serif;
+  color: #fff;
+  font-size: 18px;
+}
+
+#btn-b {
+  display: none;
+}
+
+#btn-b:checked ~ .container-menu {
+  opacity: 1;
+  visibility: visible;
+}
+
+#btn-b:checked ~ .container-menu .cont-menu {
+  transform: translateX(0%);
+}
+
+/*estilos del menu */
+.container-menu {
+  position: absolute;
+  background: rgba(0, 0, 0, 0.2);
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  transition: all 500ms ease;
+  opacity: 0;
+  visibility: hidden;
+}
+.container-menu .cont-menu {
+  width: 100%;
+  height: 100vh;
+  max-width: 200px;
+  background: #1c1c1c;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  transition: all 500ms ease;
+  transform: translateX(-100%);
+}
+.container-menu .cont-menu nav {
+  transform: translateY(18%);
+}
+.container-menu .cont-menu nav li {
+  list-style: none;
+}
+.container-menu .cont-menu nav li a {
+  text-decoration: none;
+  margin-left: 10px;
+  display: block;
+  padding: 15px;
+  color: #fff;
+  font-family: "Roboto Mono", monospace;
+  transition: all 400ms ease;
+}
+.container-menu .cont-menu nav li a:hover {
+  background: #c7c7c7;
+  color: #000;
+  font-weight: bold;
+  transition: all 400ms ease;
+}
+.container-menu .cont-menu .redes {
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  margin-top: 80px;
+  font-family: "Roboto Mono", monospace;
+  margin-left: 10px;
+  padding: 15px;
+}
+.container-menu .cont-menu .redes .datos {
+  margin: 10px 0;
+  cursor: pointer;
+}
+.container-menu .cont-menu .social ul {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  width: 140px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+.container-menu .cont-menu .social ul a {
+  color: #fff;
+  font-size: 23px;
+}
+.container-menu .cont-menu .social ul a:hover {
+  color: #001c7d;
+}
+.container-menu .cont-menu label {
+  position: absolute;
+  right: 5px;
+  top: 10px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 28px;
+}
+
+/*mixin de las secciones*/
+.home-noticias {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.home-noticias .home {
+  width: 85%;
+  height: 400px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.home-noticias .home .cat {
+  width: 250px;
+  height: 200px;
+}
+@media (max-width: 1200px) {
+  .home-noticias .home .cat {
+    margin-top: 60px;
+    width: 200px;
+    height: 150px;
+  }
+}
+@media (max-width: 600px) {
+  .home-noticias .home .cat {
+    width: 200px;
+    height: 150px;
+    margin-top: 60px;
+  }
+}
+.home-noticias .home .titulo {
+  width: 700px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.home-noticias .home .titulo h1 {
+  color: #000;
+  font-size: 55px;
+  letter-spacing: 5px;
+  font-family: "Roboto Condensed", sans-serif;
+  font-weight: bold;
+  margin: 10px 0;
+  text-align: center;
+}
+@media (max-width: 600px) {
+  .home-noticias .home .titulo h1 {
+    font-size: 37px;
+  }
+}
+.home-noticias .home .titulo p {
+  font-family: "Roboto Mono", monospace;
+  color: #000;
+  font-size: 23px;
+  text-align: center;
+  font-weight: bold;
+}
+@media (max-width: 600px) {
+  .home-noticias .home .titulo p {
+    font-size: 18px;
+  }
+}
+
+.buy {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.buy .comprar {
+  width: 85%;
+  height: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+.buy .comprar .Farms {
+  width: 510px;
+  height: 450px;
+  margin: 10px 0;
+  background-color: white;
+  border-radius: 32px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  color: #191919;
+  background-image: url("../img/dot.png");
+  background-repeat: no-repeat;
+}
+@media (max-width: 600px) {
+  .buy .comprar .Farms {
+    width: 400px;
+    height: 430px;
+    margin: 10px 0;
+    background-color: white;
+    border-radius: 32px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    color: #191919;
+    font-size: 18px;
+  }
+}
+.buy .comprar .Farms .dinero-bloqueado {
+  font-family: "Roboto Mono", monospace;
+  font-weight: bold;
+}
+.buy .comprar .Farms .dinero-bloqueado p {
+  margin: 5px 0 13px 25px;
+}
+@media (max-width: 600px) {
+  .buy .comprar .Farms .dinero-bloqueado p {
+    font-size: 14px;
+  }
+}
+.buy .comprar .Farms h2 {
+  font-family: "Roboto Condensed", sans-serif;
+  margin: 15px 0 0 25px;
+  font-size: 43px;
+  font-weight: 7px;
+  letter-spacing: 5px;
+}
+@media (max-width: 600px) {
+  .buy .comprar .Farms h2 {
+    font-size: 26px;
+  }
+}
+.buy .comprar .Farms .boton {
+  width: 100%;
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+}
+.buy .comprar .Farms .boton .btn {
+  width: 80%;
+  height: 50px;
+  border-radius: 20px;
+  font-family: "Roboto Mono", monospace;
+  font-weight: bold;
+  font-size: 18px;
+  letter-spacing: 5px;
+  color: #fff;
+  border: 1px solid #969696;
+  background: #969696;
+  cursor: pointer;
+}
+.buy .comprar .News {
+  width: 510px;
+  height: 450px;
+  margin: 10px 0;
+  background-color: white;
+  border-radius: 32px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  color: #191919;
+}
+.buy .comprar .News h2 {
+  font-family: "Roboto Condensed", sans-serif;
+  margin: 15px 0 0 25px;
+  font-size: 43px;
+  font-weight: 7px;
+  letter-spacing: 5px;
+}
+.buy .comprar .News iframe {
+  border-radius: 29px;
+  border: 2px solid white;
+  width: 100%;
+  height: 380px;
+}
+
+.pools {
+  margin-top: 90px;
+  width: 100%;
+  height: 200px;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+/* para las p agregar font-weight: bold;
+las variables en css se declaran asi como esta abajo    :root{
+    --fuente-primaria:'Roboto Condensed', sans-serif;
+    --fuente-secundaria:'Roboto Mono', monospace;
+    --color-uno:red;
+    --color-dos:#c7c7c7;
+    --color-tres:#000; 
+    --modo-bg:#ffff;
+    --modo-bg:#000;        
+}
+*/
+
+/*# sourceMappingURL=estilos.css.map */
