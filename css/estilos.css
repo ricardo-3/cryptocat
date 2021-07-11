@@ -80,6 +80,7 @@ body {
 #btn-b:checked ~ .container-menu {
   opacity: 1;
   visibility: visible;
+  position: fixed;
 }
 
 #btn-b:checked ~ .container-menu .cont-menu {
